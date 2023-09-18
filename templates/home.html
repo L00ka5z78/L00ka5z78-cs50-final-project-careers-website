@@ -14,19 +14,22 @@
             width: 100%;
             height: 20rem;
             object-fit: cover;
+            margin-bottom: 1rem
         }
     </style>
 </head>
 
 <body>
   {% include 'nav.html' %}
-    <div class="container">
-        <h1 class="text-center mt-2 mb-4">Carrer starts here </h1>
-        <img class="img-fluid" id="banner"
+   <img class="img-fluid" id="banner"
             src="https://l00ka5z78-cs50-final-project-careers-website.geriatrichardma.repl.co/static/banner.jpg"
             alt="img">
-        <h2 class="text-center mt-2 mb-4">About Careers</h2>
-        <p class="lead">
+    <div class="container">
+        <h1 class="text-center mt-2 mb-4">Carrer starts here </h1>
+       
+          <div class="row mb-5">
+            <div class="col-md-6">
+          <p class="lead">
             Imperdiet proin fermentum leo vel orci porta non. In hac habitasse platea dictumst vestibulum. Elementum
             sagittis vitae et leo duis. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et
             netus.
@@ -36,6 +39,14 @@
             rhoncus
             aenean vel elit scelerisque.
         </p>
+              </div>
+            <div class="d-none d-md-block col-md-6">
+            <img src="/static/people.jpg"
+              style="height: 20rem;
+              border-radius:4px"
+              alt="">
+              </div>
+            </div>
         <h2 class="text-center mt-2 mb-4">Job Openings</h2>
         <div >
           {% for job in jobs %}
@@ -43,7 +54,7 @@
           {% endfor %}
         </div>
         <div class="text-center">
-            <button class="btn btn-primary btn-lg">Contact Us</button>
+            <a href="mailto:bravo1_lima1@yahoo.com" class="btn btn-primary btn-lg">Contact Us</a>
         </div>
     </div>
    {% include 'footer.html' %}
