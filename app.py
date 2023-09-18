@@ -13,7 +13,6 @@ JOBS = [
         'id': 2,
         'title': 'Data scientist',
         'location': 'warszawa',
-        'salary': 'USD 3000'
     },
     {
         'id': 3,

@@ -36,7 +36,21 @@
             aenean vel elit scelerisque.
         </p>
         <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-        <p class="text-center">{{jobs}}</p>
+        <div class="text-center">
+          {% for job in jobs %}
+            <div style="margin-bottom: 1rem">
+              <h4 
+                style="color: rgb(120, 120, 120)
+                margin-bottom:4px"                
+                >{{job['title']}}</h4>
+              <div><b>Location:</b> {{job['location']}}</div>
+
+              {% if 'salary' in job %}
+              <div><b>Salary:</b> {{job['salary']}}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
         <div class="text-center">
             <button class="btn btn-primary btn-lg">Contact Us</button>
             <p class="mt-4">Copyright 2023, Lukasz</p>
