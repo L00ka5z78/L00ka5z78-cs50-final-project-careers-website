@@ -4,7 +4,7 @@ import os
 db_connection_string = os.environ['DB_CONNECTION_STRING']
 # db_connection_string = "mysql+pymysql://gazqn9tgfbtv60bmtiao:pscale_pw_GDtxRV1WOomRqwWqqQNRLOYkSUyHPjiCgjZEs8wKZCU@aws.connect.psdb.cloud/careers?charset=utf8mb4"
 #dzialajacy ponizej
-# db_connection_string = "mysql+pymysql://knfyjr26yxz4m1qej0ia:pscale_pw_1UzDu6qJbdd9JYmDBzgZEmFHYy1adldyigxFqS8KIe1@aws.connect.psdb.cloud/careers?charset=utf8mb4"
+# db_connection_string = "mysql+pymysql://iehz5rumwzvtb0hbboer:pscale_pw_JaDweneV0QzPKqq3A0UYwhMb15qyucK6nkeF2fPwMTX@aws.connect.psdb.cloud/careers?charset=utf8mb4"
 
 engine = create_engine(
     db_connection_string,
