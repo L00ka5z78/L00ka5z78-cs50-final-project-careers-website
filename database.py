@@ -4,7 +4,7 @@ import os
 db_connection_string = os.environ['DB_CONNECTION_STRING']
 # db_connection_string = "mysql+pymysql://gazqn9tgfbtv60bmtiao:pscale_pw_GDtxRV1WOomRqwWqqQNRLOYkSUyHPjiCgjZEs8wKZCU@aws.connect.psdb.cloud/careers?charset=utf8mb4"
 #dzialajacy ponizej
-# db_connection_string = "mysql+pymysql://iehz5rumwzvtb0hbboer:pscale_pw_JaDweneV0QzPKqq3A0UYwhMb15qyucK6nkeF2fPwMTX@aws.connect.psdb.cloud/careers?charset=utf8mb4"
+# db_connection_string = "mysql+pymysql://q4mig5l1r9wfn3skmv01:pscale_pw_JY6951p04eG1fCB7iA7Q48wIfYU9CaIFIOThDPwDqkN@aws.connect.psdb.cloud/careers?charset=utf8mb4"
 
 engine = create_engine(
     db_connection_string,
@@ -46,3 +46,19 @@ def load_job_from_db(id):
       return None
     else:
       return [dict(row) for row in rows]
+
+
+def add_application_to_db(job_id, data):
+  with engine.connect() as conn:
+    query = text(
+        "INSERT INTO applications (job_id, full_name, email, linkedin_url, education, work_experience, resume_url) VALUES (:job_id, :full_name, :email, :linkedin_url, :education, :work_experience, :resume_url)"
+    )
+
+    conn.execute(query,
+                 job_id=job_id,
+                 full_name=data['full_name'],
+                 email=data['email'],
+                 linkedin_url=data['linkedin_url'],
+                 education=data['education'],
+                 work_experience=data['work_experience'],
+                 resume_url=data['resume_url'])
